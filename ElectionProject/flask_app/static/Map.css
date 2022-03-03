@@ -1,0 +1,181 @@
+
+* {
+    border: 0;
+    padding: 0;
+    
+}
+
+/* #backgroundflag {
+    opacity: 0.15;
+    margin-left: 40px;
+    position: absolute;
+    
+} */
+
+#container {
+    margin-left: auto;
+    margin-right: auto;
+    width: 980px;
+    margin-top: 20px;
+    border: solid black 1px;
+    padding-right: 20px;
+    /* background-image: repeating-linear-gradient(45deg, red, white, blue); */
+    
+    /* background-image: url("/static/Americanflag.jpg");
+    opacity: 0.1; */
+}
+
+
+#title {
+    padding-top: 20px;
+    margin-left: 150px;
+    text-align: center;
+}
+
+#subtitle {
+    text-align: center;
+    margin-left: 155px;
+}
+
+tr, th, td {
+    border: black solid 1px;
+}
+
+#map {
+    margin-left: 100px;
+    margin-right: 200px;
+    width: 791px;
+    height: 499px;
+    
+    
+    
+}
+
+#top {
+    margin-left: -100px;
+}
+
+#middle {
+    background-color: lightgray;
+    margin-top: 20px;
+    margin-left: 185px;
+    width: 980px;
+}
+
+#summary1 {
+    color: red;
+    display: inline-block;
+    text-align: center;
+    margin-left: 130px;
+    padding-top: 10px;
+}
+
+#summary2 {
+    color: blue;
+    display: inline-block;
+    text-align: center;
+    margin-left: 110px;
+    padding-top: 10px;
+}
+
+#tableheader {
+    margin-left: 30px;
+    margin-top: 20px;
+    text-align: center;
+    margin-bottom: 20px;
+    padding-top: 10px;
+}
+
+#bottom {
+    margin-top: 20px;
+    background-color: lightgray;
+    padding: 10px;
+    margin-bottom: 20px;
+    width: 980px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+table {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+td {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 150px;
+    text-align: center;
+   
+}
+
+#tablecontainer {
+    width: 980px;
+    margin-left: auto;
+    margin-right: auto;
+    background-image: repeating-linear-gradient(45deg, rgb(255, 166, 166), white, lightblue);
+    padding-bottom: 10px;
+}
+
+a {
+    font-weight: bold;
+}
+
+#lasttable {
+    padding-bottom: 10px;
+}
+
+.last {
+    border-top: none;
+}
+
+.finaltext {
+    margin-left: 10px;
+}
+/* 
+.hide {
+    display: none;
+}
+
+.myDIV:hover + .hide{
+    display: block;
+    color: red;
+} */
+
+/* 
+
+.blueclickablesquares {
+    width: 20px;
+    height: 20px;
+    background-color: lightblue;
+    position: absolute;
+    border-radius: 5px;
+    opacity: 0.2;
+    
+}
+
+#washington {
+    width: 20px;
+    height: 20px;
+    background-color: lightblue;
+    position: absolute;
+    border-radius: 5px;
+    opacity: 0.2;
+    top: 120px; 
+    left: 445px;
+    transform: rotate(12deg);
+}
+
+
+/* 
+#washington {
+    width: 20px;
+    height: 20px;
+    background-color: rgb(53, 4, 117);
+    position: absolute;
+    border-radius: 5px;
+    opacity: 1.0;
+    top: 120px; 
+    left: 445px;
+    transform: rotate(12deg);
+} */

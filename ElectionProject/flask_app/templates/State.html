@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='State.css') }}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>{{state.state}}</title>
+</head>
+<body>
+    <div id = "container">
+        <h1 id = "title"> The 2020 U.S. Presidential Election</h1>
+        <p><a href = '/'>Return to main map</a></p>
+        {% if state.id == 1 %}
+            <img src = "/static/Alabama.jpg" alt = "Alabama">
+        {% elif state.id == 2 %}
+            <img src = "/static/Alaska.jpg" alt = "Alaska">
+        {% elif state.id == 3 %}
+            <img src = "/static/Arizona.jpg" alt = "Arizona">
+        {% elif state.id == 4 %}
+            <img src = "/static/Arkansas.jpg" alt = "Arkansas">
+        {% elif state.id == 5 %}
+            <img src = "/static/California.jpg" alt = "California">
+        {% elif state.id == 6 %}
+            <img src = "/static/Colorado.jpg" alt = "Colorado">
+        {% elif state.id == 7 %}
+            <img src = "/static/Connecticut.jpg" alt = "Connecticut">
+        {% elif state.id == 8 %}
+            <img src = "/static/Delaware.jpg" alt = "Delaware">
+        {% elif state.id == 9 %}
+            <img src = "/static/DC.jpg" alt = "DC">
+        {% elif state.id == 10 %}
+            <img src = "/static/Florida.jpg" alt = "Florida">
+        {% elif state.id == 11 %}
+            <img src = "/static/Georgia.jpg" alt = "Georgia">
+        {% elif state.id == 12 %}
+            <img src = "/static/Hawaii.jpg" alt = "Hawaii">
+        {% elif state.id == 13 %}
+            <img src = "/static/Idaho.jpg" alt = "Idaho">
+        {% elif state.id == 14 %}
+            <img src = "/static/Illinois.jpg" alt = "Illinois">
+        {% elif state.id == 15 %}
+            <img src = "/static/Indiana.jpg" alt = "Indiana">
+        {% elif state.id == 16 %}
+            <img src = "/static/Iowa.jpg" alt = "Iowa">
+        {% elif state.id == 17 %}
+            <img src = "/static/Kansas.jpg" alt = "Kansas">
+        {% elif state.id == 18 %}
+            <img src = "/static/Kentucky.jpg" alt = "Kentucky">
+        {% elif state.id == 19 %}
+            <img src = "/static/Louisiana.jpg" alt = "Louisiana">
+        {% elif state.id == 20 %}
+            <img src = "/static/Maine.jpg" alt = "Maine">
+        {% elif state.id == 21 %}
+            <img src = "/static/Maryland.jpg" alt = "Maryland">
+        {% elif state.id == 22 %}
+            <img src = "/static/Massachusetts.jpg" alt = "Massachusetts">
+        {% elif state.id == 23 %}
+            <img src = "/static/Michigan.jpg" alt = "Michigan">
+        {% elif state.id == 24 %}
+            <img src = "/static/Minnesota.jpg" alt = "Minnesota">
+        {% elif state.id == 25 %}
+            <img src = "/static/Mississippi.jpg" alt = "Mississippi">
+        {% elif state.id == 26 %}
+            <img src = "/static/Missouri.jpg" alt = "Missouri">
+        {% elif state.id == 27 %}
+            <img src = "/static/Montana.jpg" alt = "Montana">
+        {% elif state.id == 28 %}
+            <img src = "/static/Nebraska.jpg" alt = "Nebraska">
+        {% elif state.id == 29 %}
+            <img src = "/static/Nevada.jpg" alt = "Nevada">
+        {% elif state.id == 30 %}
+            <img src = "/static/new_hampshire.jpg" alt = "New_hampshire">
+        {% elif state.id == 31 %}
+            <img src = "/static/new_jersey.jpg" alt = "New_jersey">
+        {% elif state.id == 32 %}
+            <img src = "/static/New_Mexico.jpg" alt = "New_mexico">
+        {% elif state.id == 33 %}
+            <img src = "/static/new_york.jpg" alt = "New_york">
+        {% elif state.id == 34 %}
+            <img src = "/static/north_carolina.jpg" alt = "North_carolina">
+        {% elif state.id == 35 %}
+            <img src = "/static/North_Dakota.jpg" alt = "North_dakota">
+        {% elif state.id == 36 %}
+            <img src = "/static/Ohio.jpg" alt = "Ohio">
+        {% elif state.id == 37 %}
+            <img src = "/static/Oklahoma.jpg" alt = "Oklahoma">
+        {% elif state.id == 38 %}
+            <img src = "/static/Oregon.jpg" alt = "Oregon">
+        {% elif state.id == 39 %}
+            <img src = "/static/Pennsylvania.jpg" alt = "Pennsylvania">
+        {% elif state.id == 40 %}
+            <img src = "/static/rhode_island.jpg" alt = "rhode_island">
+        {% elif state.id == 41 %}
+            <img src = "/static/south_carolina.jpg" alt = "south_carolina">
+        {% elif state.id == 42 %}
+            <img src = "/static/south_dakota.jpg" alt = "south_dakota">
+        {% elif state.id == 43 %}
+            <img src = "/static/Tennessee.jpg" alt = "Tennessee">
+        {% elif state.id == 44 %}
+            <img src = "/static/Texas.jpg" alt = "Texas">
+        {% elif state.id == 45 %}
+            <img src = "/static/Utah.jpg" alt = "Utah">
+        {% elif state.id == 46 %}
+            <img src = "/static/Vermont.jpg" alt = "Vermont">
+        {% elif state.id == 47 %}
+            <img src = "/static/Virginia.jpg" alt = "Virginia">
+        {% elif state.id == 48 %}
+            <img src = "/static/Washington.jpg" alt = "Washington">
+        {% elif state.id == 49 %}
+            <img src = "/static/west_virginia.jpg" alt = "west_virginia">
+        {% elif state.id == 50 %}
+            <img src = "/static/Wisconsin.jpg" alt = "Wisconsin">
+        {% elif state.id == 51 %}
+            <img src = "/static/Wyoming.jpg" alt = "Wyoming">
+        {% endif %}
+        <h1>{{state.state}}</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th> Presidential Candidate </th>
+                    <th> Popular Vote Count </th>
+                    <th> Electoral Vote Count </th> 
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Donald Trump (R) </td>
+                    <td>{{state.popvoteR}}</td>
+                    <td>{{state.evR}}</td>
+                </tr>
+                <tr>
+                    <td>Joseph Biden (D)</td>
+                    <td>{{state.popvoteD}}</td>
+                    <td>{{state.evD}}</td>
+                </tr>
+            </tbody>
+        </table>
+        <p class = "bottomtext">* = denotes winner</p>
+        <p class = "bottomtext">Individual state graphics provided by: <a href = '/amcharts'>AMcharts.com</a>
+    </div>
+<!-- 
+    <p>Red color: #F00924</p>
+    <p>Blue color: #3009F0</p> -->
+</body>
+</html>

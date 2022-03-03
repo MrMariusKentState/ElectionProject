@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='Map.css') }}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Election 2020</title>
+</head>
+<body>
+    <!-- <img id = "backgroundflag" src="/static/Americanflag.jpg"> -->
+    <div id = "container">
+        
+        <div id = "top">
+            <h1 id = "title"> The 2020 U.S. Presidential Election</h1>
+            <h3 id = "subtitle">Click on a state to view the results, or scroll to the bottom:</h3>
+        </div>   
+            
+        <div>
+            <map name = "workmap">
+                
+                <area shape="circle" coords="100,50,20" alt = "washington" href='/48' />
+                <area shape = "circle" coords ="110,110,25" alt = "oregon" href = '/38' />
+                <area shape = "circle" coords ="130,200,30" alt = "nevada" href = '/29' />
+                <area shape = "circle" coords ="70,220,20" alt = "california" href = '/5' />
+                <area shape = "circle" coords ="165,110,15" alt = "idaho" href = '/13' />
+                <area shape = "circle" coords ="190,205,20" alt = "utah" href = '/45' />
+                <area shape = "circle" coords ="180,295,20" alt = "arizona" href = '/3' />
+                <area shape = "circle" coords ="100,400,20" alt = "alaska" href = '/2' />
+                <area shape = "circle" coords ="225,450,40" alt = "hawaii" href = '/12' />
+                <area shape = "circle" coords ="260,300,30" alt = "new_mexico" href = '/32' />
+                <area shape = "circle" coords ="280,220,30" alt = "colorado" href = '/6' />
+                <area shape = "circle" coords ="260,140,30" alt = "wyoming" href = '/51' />
+                <area shape = "circle" coords ="240,5,30" alt = "montana" href = '/27' />
+                <area shape = "circle" coords ="350,95,30" alt = "north_dakota" href = '/35' />
+                <area shape = "circle" coords ="350,135,20" alt = "south_dakota" href = '/42' />
+                <area shape = "circle" coords ="350,190,20" alt = "nebraska" href = '/28' />
+                <area shape = "circle" coords ="360,240,20" alt = "kansas" href = '/17' />
+                <area shape = "circle" coords ="370,295,20" alt = "oklahoma" href = '/37' />
+                <area shape = "circle" coords ="340,360,30" alt = "texas" href = '/44' />
+                <area shape = "circle" coords ="455,360,10" alt = "louisiana" href = '/19' />
+                <area shape = "circle" coords ="455,300,20" alt = "arkansas" href = '/4' />
+                <area shape = "circle" coords ="445,240,20" alt = "missouri" href = '/26' />
+                <area shape = "circle" coords ="430,180,20" alt = "iowa" href = '/16' />
+                <area shape = "circle" coords ="415,110,20" alt = "minnesota" href = '/24' />
+                <area shape = "circle" coords ="470,135,20" alt = "wisconsin" href = '/50' />
+                <area shape = "circle" coords ="485,210,20" alt = "illinois" href = '/14' />
+                <area shape = "circle" coords ="525,210,10" alt = "indiana" href = '/15' />
+                <area shape = "circle" coords ="535,145,20" alt = "michigan" href = '/23' />
+                <area shape = "circle" coords ="545,250,15" alt = "kentucky" href = '/18' />
+                <area shape = "circle" coords ="530,280,10" alt = "tennessee" href = '/43' />
+                <area shape = "circle" coords ="490,335,15" alt = "mississippi" href = '/25' />
+                <area shape = "circle" coords ="530,335,15" alt = "alabama" href = '/1' />
+                <area shape = "circle" coords ="570,200,20" alt = "ohio" href = '/36' />
+                <area shape = "circle" coords ="580,335,20" alt = "georgia" href = '/11' />
+                <area shape = "circle" coords ="615,395,20" alt = "florida" href = '/10' />
+                <area shape = "circle" coords ="610,305,15" alt = "south_carolina" href = '/41' />
+                <area shape = "circle" coords ="620,275,10" alt = "north_carolina" href = '/34' />
+                <area shape = "circle" coords ="630,235,15" alt = "virginia" href = '/47' />
+                <area shape = "circle" coords ="600,220,10" alt = "west_virginia" href = '/49' />
+                <area shape = "circle" coords ="635,180,15" alt = "pennsylvania" href = '/39' />
+                <area shape = "circle" coords ="700,265,15" alt = "dc" href = '/9' />
+                <area shape = "circle" coords ="700,240,10" alt = "maryland" href = '/21' />
+                <area shape = "circle" coords ="655,205,10" alt = "maryland2" href = '/21' />
+                <area shape = "circle" coords ="695,215,10" alt = "delaware" href = '/8' />
+                <area shape = "circle" coords ="685,195,10" alt = "new_jersey" href = '/31' />
+                <area shape = "circle" coords ="655,135,15" alt = "new_york" href = '/33' />
+                <area shape = "circle" coords ="680,105,8" alt = "vermont" href = '/46' />
+                <area shape = "circle" coords ="697,115,8" alt = "new_hampshire" href = '/30' />
+                <area shape = "circle" coords ="725,115,8" alt = "new_hampshire2" href = '/30' />
+                <area shape = "circle" coords ="725,80,15" alt = "maine" href = '/20' />
+                <area shape = "circle" coords ="720,135,10" alt = "massachusetts" href = '/22' />
+                <area shape = "circle" coords ="725,160,8" alt = "rhode_island" href = '/40' />
+                <area shape = "circle" coords ="710,170,8" alt = "connecticut" href = '/7' />
+                <area shape = "circle" coords ="695,155,5" alt = "connecticut2" href = '/7' />
+                
+            </map>
+
+            <img id = "map" src = "/static/Mapimage.png" alt = "workplace" usemap = "#workmap">
+        </div>
+    </div>
+            <div id = "middle">
+                <div id = "summary1">
+                    <h2>Donald J. Trump </h2>
+                    <h3>Republican</h3>
+                    <h4>232 total electoral votes</h4>
+                    <p>74,224,319 total votes cast</p>
+                    
+                </div>
+                <div id = "summary2">
+                    <h2>Joseph R Biden Jr. (winner) </h2>
+                    <h3>Democrat</h3>
+                    <h4>306 total electoral votes</h4>
+                    <p>81,284,666 total votes cast</p>
+                </div>
+                
+            </div>
+        
+        <div id = "tablecontainer">
+            <h2 id = "tableheader">Click on a state below for more information:</h2> 
+            <div id = "table">
+            <!-- <img id = "backgroundflag" src = "/static/Americanflag.jpg"> -->
+                <table>
+                    <tbody>
+                        <tr>
+                            <td><a href = '/1'>Alabama</a></td>
+                            <td><a href = '/2'>Alaska</a></td>
+                            <td><a href = '/3'>Arizona</a></td>
+                            <td><a href = '/4'>Arkansas</a></td>
+                            <td><a href = '/5'>California</a></td>
+                        </tr>
+                        <tr>
+                            <td><a href = '/6'>Colorado</a></td>
+                            <td><a href = '/7'>Connecticut</a></td>
+                            <td><a href = '/8'>Delaware</a></td>
+                            <td><a href = '/9'>D.C.</a></td>
+                            <td><a href = '/10'>Florida</a></td>
+                        </tr>
+                        <tr>
+                            <td><a href = '/11'>Georgia</a></td>
+                            <td><a href = '/12'>Hawaii</a></td>
+                            <td><a href = '/13'>Idaho</a></td>
+                            <td><a href = '/14'>Illinois</a></td>
+                            <td><a href = '/15'>Indiana</a></td>
+                        </tr>
+                        <tr>
+                            <td><a href = '/16'>Iowa</a></td>
+                            <td><a href = '/17'>Kansas</a></td>
+                            <td><a href = '/18'>Kentucky</a></td>
+                            <td><a href = '/19'>Louisiana</a></td>
+                            <td><a href = '/20'>Maine</a></td>
+                        </tr>
+                        <tr>
+                            <td><a href = '/21'>Maryland</a></td>
+                            <td><a href = '/22'>Massachusetts</a></td>
+                            <td><a href = '/23'>Michigan</a></td>
+                            <td><a href = '/24'>Minnesota</a></td>
+                            <td><a href = '/25'>Mississippi</a></td>
+                        </tr>
+                        <tr>
+                            <td><a href = '/26'>Missouri</a></td>
+                            <td><a href = '/27'>Montana</a></td>
+                            <td><a href = '/28'>Nebraska</a></td>
+                            <td><a href = '/29'>Nevada</a></td>
+                            <td><a href = '/30'>New Hampshire</a></td>
+                        </tr>
+                        <tr>
+                            <td><a href = '/31'>New Jersey</a></td>
+                            <td><a href = '/32'>New Mexico</a></td>
+                            <td><a href = '/33'>New York</a></td>
+                            <td><a href = '/34'>North Carolina</a></td>
+                            <td><a href = '/35'>North Dakota</a></td>
+                        </tr>
+                        <tr>
+                            <td><a href = '/36'>Ohio</a></td>
+                            <td><a href = '/37'>Oklahoma</a></td>
+                            <td><a href = '/38'>Oregon</a></td>
+                            <td><a href = '/39'>Pennsylvania</a></td>
+                            <td><a href = '/40'>Rhode Island</a></td>
+                        </tr>
+                        <tr>
+                            <td><a href = '/41'>South Carolina</a></td>
+                            <td><a href = '/42'>South Dakota</a></td>
+                            <td><a href = '/43'>Tennessee</a></td>
+                            <td><a href = '/44'>Texas</a></td>
+                            <td><a href = '/45'>Utah</a></td>
+                        </tr>
+                        <tr>
+                            <td><a href = '/46'>Vermont</a></td>
+                            <td><a href = '/47'>Virginia</a></td>
+                            <td><a href = '/48'>Washington</a></td>
+                            <td><a href = '/49'>West Virginia</a></td>
+                            <td><a href = '/50'>Wisconsin</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table id = "lasttable">
+                    <tbody class = "last">
+                        <tr class = "last">
+                            <td class = "last"><a href = '/51'>Wyoming</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    <div id = "bottom">
+        <p class = "finaltext">Map graphics provided by <a href = "/clickablemap"> CreateaClickablemap.com </a></p> 
+        <p class = "finaltext">Election data provided by <a href = "/nytimes">The New York Times</a></p>
+        
+    </div>
+
+
+</body>
+</html>
