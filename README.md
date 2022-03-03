@@ -2,9 +2,11 @@
 <p>This website consists of a user-friendly clickable U.S. map where a user can click on any given state and retrieve voter data from the 2020 U.S. Presidential election.  The backend is built with Python and Flask, and the frontend design incorporates the use of Bootstrap and Jinja2. </p>
 <h3>Current Features</h3>
 <ul>
-<li>An image of a clickable U.S. map consisting of set html coordinates linked to specific U.S. state locations, which then renders a page with election results unique to the clicked U.S. state.
-<li>U.S. State Electoral and Popular voting data retrieved from MySQL database, which is linked by U.S. state id. 
-<li>Incorporated Bootstrap grid system and unique color stylings for rendering data
+<li>"Red/blue" electoral map designed on https://www.createaclickablemap.com/; png image of map linked with set html coordinates corresponding to specific U.S. state locations. 
+<li>Mapping image coordinates linked with state id routes to allow user to retrieve election results unique to a clicked U.S. state.
+<li>U.S. State Electoral and Popular voting data retrieved from MySQL database, linked by U.S. state id. 
+<li>Incorporated Bootstrap grid system and unique color stylings for rendering images.
+
 </ul>
 <h3>Potential Future Features</h3>
 <ul>
