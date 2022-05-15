@@ -26,3 +26,15 @@
     margin-bottom: 20px;
     vertical-align: bottom;
 }
+
+
+#linkedin, #github, #researchgate{
+    height: 35px;
+
+}
+
+
+.tech img{
+    height: 35px;
+}
+
