@@ -3,6 +3,8 @@ from flask import render_template, redirect
 from flask_app import app
 from flask_app.models.elect2020model import Election2020
 
+import subprocess
+
 
 @app.route('/')
 def home ():
@@ -31,3 +33,15 @@ def newyorktimes():
 @app.route('/amcharts')
 def amcharts():
     return redirect("https://www.amcharts.com/visited_states/#")
+
+# attempting to render google charts using MySQL data below:
+
+def php(script_path):
+    p = subprocess.Popen(['php', script_path], stdout=subprocess.PIPE)
+    result = p.communicate()[0]
+    return result
+
+@app.route('/test')
+def apidatachart():
+    apipage = php("api.php")
+    return apipage;
