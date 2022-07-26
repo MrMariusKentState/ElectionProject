@@ -48,3 +48,24 @@ th, td {
     text-align: left;
     margin-left: 152px;
 }
+
+.bottomtext2 {
+    text-align: left;
+    margin-left: 152px;
+}
+
+
+.subheader {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.chartbox {
+    width: 900px;
+    margin-left: 100px;
+}
+
+#maine_chart {
+    display: inline-block;
+    margin: 0 auto;
+}

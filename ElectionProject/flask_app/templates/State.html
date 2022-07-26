@@ -8,11 +8,49 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='State.css') }}">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <title>{{state.state}}</title>
+
+
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+
+    google.charts.load('current', {'packages':['corechart']});
+
+
+
+
+
+
+    google.charts.setOnLoadCallback(drawMaineChart);
+      function drawMaineChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Year', 'Republican vote', 'Democrat vote'],
+          ['2000 Bush(R) Gore(D)',  286616,                319951],
+          ['2004 Bush(R) Kerry(D)',  330201,               396842],
+          ['2008 McCain(R) Obama(D)',  295273,               421923],
+          ['2012 Romney(R) Obama(D)',  292276,               401306],
+          ['2016 Trump(R) Clinton(D)',  335593,               357735],
+          ['2020 Trump(R) Biden(D)',  360737,               435072]
+        ]);
+
+        var options = {
+          width: 800,
+          colors:['red','blue'],
+          legend: { position: 'bottom' },
+          pointSize: 5
+        };
+
+        var chart = new google.visualization.LineChart(document.getElementById('maine_chart'));
+
+        chart.draw(data, options);
+      }
+    </script>
+
 </head>
 <body>
     
     <div id = "container">
         <h1 id = "title"> The 2020 U.S. Presidential Election</h1>
+        <h1>{{state.state}}</h1>
         <p><a href = '/'>Return to main map</a></p>
         {% if state.id == 1 %}
             <img src = "/static/Alabama.jpg" alt = "Alabama">
@@ -52,8 +90,13 @@
             <img src = "/static/Kentucky.jpg" alt = "Kentucky">
         {% elif state.id == 19 %}
             <img src = "/static/Louisiana.jpg" alt = "Louisiana">
+
         {% elif state.id == 20 %}
             <img src = "/static/Maine.jpg" alt = "Maine">
+            <h4 class = "subheader">Maine Presidential election popular votes (2000 - 2020)</h4>
+            <div class = "chartbox">
+                <div id="maine_chart" style="width: 900px; height: 500px"></div>
+            </div>
         {% elif state.id == 21 %}
             <img src = "/static/Maryland.jpg" alt = "Maryland">
         {% elif state.id == 22 %}
@@ -117,7 +160,7 @@
         {% elif state.id == 51 %}
             <img src = "/static/Wyoming.jpg" alt = "Wyoming">
         {% endif %}
-        <h1>{{state.state}}</h1>
+        <h4 class = "subheader">The 2020 U.S. Presidential Election</h4>
         <table>
             <thead>
                 <tr>
@@ -140,7 +183,9 @@
             </tbody>
         </table>
         <p class = "bottomtext">* = denotes winner</p>
-        <p class = "bottomtext">Individual state graphics provided by: <a href = '/amcharts'>AMcharts.com</a>
+        <br>
+        <br>
+        <p class = "bottomtext2">Individual state graphics provided by: <a href = '/amcharts'>AMcharts.com</a>
     </div>
 <!-- 
     <p>Red color: #F00924</p>
