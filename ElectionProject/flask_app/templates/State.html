@@ -90,6 +90,31 @@
       }
 
 
+    google.charts.setOnLoadCallback(drawArkansasChart);
+      function drawArkansasChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Year', 'Republican vote', 'Democrat vote'],
+          ['2000 Bush(R) Gore(D)',  472940,                422768],
+          ['2004 Bush(R) Kerry(D)',  572898,               469953],
+          ['2008 McCain(R) Obama(D)',  638017,               422310],
+          ['2012 Romney(R) Obama(D)',  647744,               394409],
+          ['2016 Trump(R) Clinton(D)',  684872,               380494],
+          ['2020 Trump(R) Biden(D)',  760647,               423932]
+        ]);
+
+        var options = {
+          width: 800,
+          colors:['red','blue'],
+          legend: { position: 'bottom' },
+          pointSize: 5
+        };
+
+        var chart = new google.visualization.LineChart(document.getElementById('arkansas_chart'));
+
+        chart.draw(data, options);
+      }
+
+
 
 
     google.charts.setOnLoadCallback(drawCaliforniaChart);
@@ -172,6 +197,10 @@
             </div>
         {% elif state.id == 4 %}
             <img src = "/static/Arkansas.jpg" alt = "Arkansas">
+            <h4 class = "subheader">Arkansas Presidential election popular votes (2000 - 2020)</h4>
+            <div class = "chartbox">
+                <div id="arkansas_chart" style="width: 900px; height: 500px"></div>
+            </div>
         {% elif state.id == 5 %}
             <img src = "/static/California.jpg" alt = "California">
             <h4 class = "subheader">California Presidential election popular votes (2000 - 2020)</h4>
