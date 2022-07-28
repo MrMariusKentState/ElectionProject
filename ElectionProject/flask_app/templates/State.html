@@ -218,10 +218,55 @@
       }
 
 
+    google.charts.setOnLoadCallback(drawDCChart);
+      function drawDCChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Year', 'Republican vote', 'Democrat vote'],
+          ['2000 Bush(R) Gore(D)',  18073,                171923],
+          ['2004 Bush(R) Kerry(D)',  21256,               202970],
+          ['2008 McCain(R) Obama(D)',  17367,               245800],
+          ['2012 Romney(R) Obama(D)',  21381,               267070],
+          ['2016 Trump(R) Clinton(D)',  12723,               282830],
+          ['2020 Trump(R) Biden(D)',  18586,               317323]
+        ]);
+
+        var options = {
+          width: 800,
+          colors:['red','blue'],
+          legend: { position: 'bottom' },
+          pointSize: 5
+        };
+
+        var chart = new google.visualization.LineChart(document.getElementById('dc_chart'));
+
+        chart.draw(data, options);
+      }
 
 
 
+    google.charts.setOnLoadCallback(drawfloridaChart);
+      function drawfloridaChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Year', 'Republican vote', 'Democrat vote'],
+          ['2000 Bush(R) Gore(D)',  18073,                171923],
+          ['2004 Bush(R) Kerry(D)',  21256,               202970],
+          ['2008 McCain(R) Obama(D)',  17367,               245800],
+          ['2012 Romney(R) Obama(D)',  21381,               267070],
+          ['2016 Trump(R) Clinton(D)',  12723,               282830],
+          ['2020 Trump(R) Biden(D)',  18586,               317323]
+        ]);
 
+        var options = {
+          width: 800,
+          colors:['red','blue'],
+          legend: { position: 'bottom' },
+          pointSize: 5
+        };
+
+        var chart = new google.visualization.LineChart(document.getElementById('florida_chart'));
+
+        chart.draw(data, options);
+      }
 
 
 
@@ -308,8 +353,16 @@
             </div>
         {% elif state.id == 9 %}
             <img src = "/static/DC.jpg" alt = "DC">
+            <h4 class = "subheader">Washington, DC Presidential election popular votes (2000 - 2020)</h4>
+            <div class = "chartbox">
+                <div id="dc_chart" style="width: 900px; height: 500px"></div>
+            </div>
         {% elif state.id == 10 %}
             <img src = "/static/Florida.jpg" alt = "Florida">
+            <h4 class = "subheader">Florida Presidential election popular votes (2000 - 2020)</h4>
+            <div class = "chartbox">
+                <div id="florida_chart" style="width: 900px; height: 500px"></div>
+            </div>
         {% elif state.id == 11 %}
             <img src = "/static/Georgia.jpg" alt = "Georgia">
         {% elif state.id == 12 %}
