@@ -296,6 +296,82 @@
 
 
 
+    google.charts.setOnLoadCallback(drawHawaiiChart);
+      function drawHawaiiChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Year', 'Republican vote', 'Democrat vote'],
+          ['2000 Bush(R) Gore(D)',  137845,                205286],
+          ['2004 Bush(R) Kerry(D)',  194191,                231708],
+          ['2008 McCain(R) Obama(D)',  120566,               325871],
+          ['2012 Romney(R) Obama(D)',  121015,               306658],
+          ['2016 Trump(R) Clinton(D)',  128847,               266891],
+          ['2020 Trump(R) Biden(D)',  196864,               366130]
+        ]);
+
+        var options = {
+          width: 800,
+          colors:['red','blue'],
+          legend: { position: 'bottom' },
+          pointSize: 5
+        };
+
+        var chart = new google.visualization.LineChart(document.getElementById('hawaii_chart'));
+
+        chart.draw(data, options);
+      }
+
+
+
+    google.charts.setOnLoadCallback(drawIdahoChart);
+      function drawIdahoChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Year', 'Republican vote', 'Democrat vote'],
+          ['2000 Bush(R) Gore(D)',  336937,                138637],
+          ['2004 Bush(R) Kerry(D)',  409235,                181098],
+          ['2008 McCain(R) Obama(D)',  403012,               236440],
+          ['2012 Romney(R) Obama(D)',  420911,               212787],
+          ['2016 Trump(R) Clinton(D)',  409055,               189765],
+          ['2020 Trump(R) Biden(D)',  554119,               287021]
+        ]);
+
+        var options = {
+          width: 800,
+          colors:['red','blue'],
+          legend: { position: 'bottom' },
+          pointSize: 5
+        };
+
+        var chart = new google.visualization.LineChart(document.getElementById('idaho_chart'));
+
+        chart.draw(data, options);
+      }
+
+
+
+    google.charts.setOnLoadCallback(drawIllinoisChart);
+      function drawIllinoisChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Year', 'Republican vote', 'Democrat vote'],
+          ['2000 Bush(R) Gore(D)',  2019421,                2589026],
+          ['2004 Bush(R) Kerry(D)',  2345946,                2891550],
+          ['2008 McCain(R) Obama(D)',  2031179,               3419348],
+          ['2012 Romney(R) Obama(D)',  2135216,               3019512],
+          ['2016 Trump(R) Clinton(D)',  2146015,               3090729],
+          ['2020 Trump(R) Biden(D)',  2446891,               3471915]
+        ]);
+
+        var options = {
+          width: 800,
+          colors:['red','blue'],
+          legend: { position: 'bottom' },
+          pointSize: 5
+        };
+
+        var chart = new google.visualization.LineChart(document.getElementById('illinois_chart'));
+
+        chart.draw(data, options);
+      }
+
 
 
 
@@ -399,10 +475,22 @@
             </div>
         {% elif state.id == 12 %}
             <img src = "/static/Hawaii.jpg" alt = "Hawaii">
+            <h4 class = "subheader">Hawaii U.S. Presidential election popular vote totals (2000 - 2020)</h4>
+            <div class = "chartbox">
+                <div id="hawaii_chart" style="width: 900px; height: 500px"></div>
+            </div>
         {% elif state.id == 13 %}
             <img src = "/static/Idaho.jpg" alt = "Idaho">
+            <h4 class = "subheader">Idaho U.S. Presidential election popular vote totals (2000 - 2020)</h4>
+            <div class = "chartbox">
+                <div id="idaho_chart" style="width: 900px; height: 500px"></div>
+            </div>
         {% elif state.id == 14 %}
             <img src = "/static/Illinois.jpg" alt = "Illinois">
+            <h4 class = "subheader">Illinois U.S. Presidential election popular vote totals (2000 - 2020)</h4>
+            <div class = "chartbox">
+                <div id="illinois_chart" style="width: 900px; height: 500px"></div>
+            </div>
         {% elif state.id == 15 %}
             <img src = "/static/Indiana.jpg" alt = "Indiana">
         {% elif state.id == 16 %}
