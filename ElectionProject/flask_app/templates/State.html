@@ -168,6 +168,63 @@
       }
 
 
+    google.charts.setOnLoadCallback(drawConnecticutChart);
+      function drawConnecticutChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Year', 'Republican vote', 'Democrat vote'],
+          ['2000 Bush(R) Gore(D)',  561094,                816015],
+          ['2004 Bush(R) Kerry(D)',  693826,               857488],
+          ['2008 McCain(R) Obama(D)',  629428,               997772],
+          ['2012 Romney(R) Obama(D)',  634892,               905083],
+          ['2016 Trump(R) Clinton(D)',  673215,               897572],
+          ['2020 Trump(R) Biden(D)',  715291,               1080680]
+        ]);
+
+        var options = {
+          width: 800,
+          colors:['red','blue'],
+          legend: { position: 'bottom' },
+          pointSize: 5
+        };
+
+        var chart = new google.visualization.LineChart(document.getElementById('connecticut_chart'));
+
+        chart.draw(data, options);
+      }
+
+
+    google.charts.setOnLoadCallback(drawDelawareChart);
+      function drawDelawareChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Year', 'Republican vote', 'Democrat vote'],
+          ['2000 Bush(R) Gore(D)',  137288,                180068],
+          ['2004 Bush(R) Kerry(D)',  171660,               200152],
+          ['2008 McCain(R) Obama(D)',  152374,               255459],
+          ['2012 Romney(R) Obama(D)',  165484,               242584],
+          ['2016 Trump(R) Clinton(D)',  185127,               235603],
+          ['2020 Trump(R) Biden(D)',  200603,               296268]
+        ]);
+
+        var options = {
+          width: 800,
+          colors:['red','blue'],
+          legend: { position: 'bottom' },
+          pointSize: 5
+        };
+
+        var chart = new google.visualization.LineChart(document.getElementById('delaware_chart'));
+
+        chart.draw(data, options);
+      }
+
+
+
+
+
+
+
+
+
 
 
     google.charts.setOnLoadCallback(drawMaineChart);
@@ -239,8 +296,16 @@
             </div>
         {% elif state.id == 7 %}
             <img src = "/static/Connecticut.jpg" alt = "Connecticut">
+            <h4 class = "subheader">Connecticut Presidential election popular votes (2000 - 2020)</h4>
+            <div class = "chartbox">
+                <div id="connecticut_chart" style="width: 900px; height: 500px"></div>
+            </div>
         {% elif state.id == 8 %}
             <img src = "/static/Delaware.jpg" alt = "Delaware">
+            <h4 class = "subheader">Delaware Presidential election popular votes (2000 - 2020)</h4>
+            <div class = "chartbox">
+                <div id="delaware_chart" style="width: 900px; height: 500px"></div>
+            </div>
         {% elif state.id == 9 %}
             <img src = "/static/DC.jpg" alt = "DC">
         {% elif state.id == 10 %}
