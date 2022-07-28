@@ -248,12 +248,12 @@
       function drawfloridaChart() {
         var data = google.visualization.arrayToDataTable([
           ['Year', 'Republican vote', 'Democrat vote'],
-          ['2000 Bush(R) Gore(D)',  18073,                171923],
-          ['2004 Bush(R) Kerry(D)',  21256,               202970],
-          ['2008 McCain(R) Obama(D)',  17367,               245800],
-          ['2012 Romney(R) Obama(D)',  21381,               267070],
-          ['2016 Trump(R) Clinton(D)',  12723,               282830],
-          ['2020 Trump(R) Biden(D)',  18586,               317323]
+          ['2000 Bush(R) Gore(D)',  2912790,                2912253],
+          ['2004 Bush(R) Kerry(D)',  3964522,               3583544],
+          ['2008 McCain(R) Obama(D)',  4045624,               4282074],
+          ['2012 Romney(R) Obama(D)',  4163447,               4237756],
+          ['2016 Trump(R) Clinton(D)',  4617886,               4504975],
+          ['2020 Trump(R) Biden(D)',  5668731,               5297045]
         ]);
 
         var options = {
@@ -267,6 +267,34 @@
 
         chart.draw(data, options);
       }
+
+
+
+    google.charts.setOnLoadCallback(drawGeorgiaChart);
+      function drawGeorgiaChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Year', 'Republican vote', 'Democrat vote'],
+          ['2000 Bush(R) Gore(D)',  2912790,                2912253],
+          ['2004 Bush(R) Kerry(D)',  3964522,               3583544],
+          ['2008 McCain(R) Obama(D)',  4045624,               4282074],
+          ['2012 Romney(R) Obama(D)',  4163447,               4237756],
+          ['2016 Trump(R) Clinton(D)',  4617886,               4504975],
+          ['2020 Trump(R) Biden(D)',  5668731,               5297045]
+        ]);
+
+        var options = {
+          width: 800,
+          colors:['red','blue'],
+          legend: { position: 'bottom' },
+          pointSize: 5
+        };
+
+        var chart = new google.visualization.LineChart(document.getElementById('georgia_chart'));
+
+        chart.draw(data, options);
+      }
+
+
 
 
 
@@ -305,66 +333,70 @@
         <p><a href = '/'>Return to main map</a></p>
         {% if state.id == 1 %}
             <img src = "/static/Alabama.jpg" alt = "Alabama">
-            <h4 class = "subheader">Alabama Presidential election popular votes (2000 - 2020)</h4>
+            <h4 class = "subheader">Alabama U.S. Presidential election popular vote totals (2000 - 2020)</h4>
             <div class = "chartbox">
                 <div id="alabama_chart" style="width: 900px; height: 500px"></div>
             </div>
         {% elif state.id == 2 %}
             <img src = "/static/Alaska.jpg" alt = "Alaska">
-            <h4 class = "subheader">Alaska Presidential election popular votes (2000 - 2020)</h4>
+            <h4 class = "subheader">Alaska U.S. Presidential election popular vote totals (2000 - 2020)</h4>
             <div class = "chartbox">
                 <div id="alaska_chart" style="width: 900px; height: 500px"></div>
             </div>
         {% elif state.id == 3 %}
             <img src = "/static/Arizona.jpg" alt = "Arizona">
-            <h4 class = "subheader">Arizona Presidential election popular votes (2000 - 2020)</h4>
+            <h4 class = "subheader">Arizona U.S. Presidential election popular vote totals (2000 - 2020)</h4>
             <div class = "chartbox">
                 <div id="arizona_chart" style="width: 900px; height: 500px"></div>
             </div>
         {% elif state.id == 4 %}
             <img src = "/static/Arkansas.jpg" alt = "Arkansas">
-            <h4 class = "subheader">Arkansas Presidential election popular votes (2000 - 2020)</h4>
+            <h4 class = "subheader">Arkansas U.S. Presidential election popular vote totals (2000 - 2020)</h4>
             <div class = "chartbox">
                 <div id="arkansas_chart" style="width: 900px; height: 500px"></div>
             </div>
         {% elif state.id == 5 %}
             <img src = "/static/California.jpg" alt = "California">
-            <h4 class = "subheader">California Presidential election popular votes (2000 - 2020)</h4>
+            <h4 class = "subheader">California U.S. Presidential election popular vote totals (2000 - 2020)</h4>
             <div class = "chartbox">
                 <div id="california_chart" style="width: 900px; height: 500px"></div>
             </div>
         {% elif state.id == 6 %}
             <img src = "/static/Colorado.jpg" alt = "Colorado">
-            <h4 class = "subheader">Colorado Presidential election popular votes (2000 - 2020)</h4>
+            <h4 class = "subheader">Colorado U.S. Presidential election popular vote totals (2000 - 2020)</h4>
             <div class = "chartbox">
                 <div id="colorado_chart" style="width: 900px; height: 500px"></div>
             </div>
         {% elif state.id == 7 %}
             <img src = "/static/Connecticut.jpg" alt = "Connecticut">
-            <h4 class = "subheader">Connecticut Presidential election popular votes (2000 - 2020)</h4>
+            <h4 class = "subheader">Connecticut U.S. Presidential election popular vote totals (2000 - 2020)</h4>
             <div class = "chartbox">
                 <div id="connecticut_chart" style="width: 900px; height: 500px"></div>
             </div>
         {% elif state.id == 8 %}
             <img src = "/static/Delaware.jpg" alt = "Delaware">
-            <h4 class = "subheader">Delaware Presidential election popular votes (2000 - 2020)</h4>
+            <h4 class = "subheader">Delaware U.S. Presidential election popular vote totals (2000 - 2020)</h4>
             <div class = "chartbox">
                 <div id="delaware_chart" style="width: 900px; height: 500px"></div>
             </div>
         {% elif state.id == 9 %}
             <img src = "/static/DC.jpg" alt = "DC">
-            <h4 class = "subheader">Washington, DC Presidential election popular votes (2000 - 2020)</h4>
+            <h4 class = "subheader">Washington, DC U.S. Presidential election popular vote totals (2000 - 2020)</h4>
             <div class = "chartbox">
                 <div id="dc_chart" style="width: 900px; height: 500px"></div>
             </div>
         {% elif state.id == 10 %}
             <img src = "/static/Florida.jpg" alt = "Florida">
-            <h4 class = "subheader">Florida Presidential election popular votes (2000 - 2020)</h4>
+            <h4 class = "subheader">Florida U.S. Presidential election popular vote totals (2000 - 2020)</h4>
             <div class = "chartbox">
                 <div id="florida_chart" style="width: 900px; height: 500px"></div>
             </div>
         {% elif state.id == 11 %}
             <img src = "/static/Georgia.jpg" alt = "Georgia">
+            <h4 class = "subheader">Georgia U.S. Presidential election popular vote totals (2000 - 2020)</h4>
+            <div class = "chartbox">
+                <div id="florida_chart" style="width: 900px; height: 500px"></div>
+            </div>
         {% elif state.id == 12 %}
             <img src = "/static/Hawaii.jpg" alt = "Hawaii">
         {% elif state.id == 13 %}
@@ -383,7 +415,7 @@
             <img src = "/static/Louisiana.jpg" alt = "Louisiana">
         {% elif state.id == 20 %}
             <img src = "/static/Maine.jpg" alt = "Maine">
-            <h4 class = "subheader">Maine Presidential election popular votes (2000 - 2020)</h4>
+            <h4 class = "subheader">Maine U.S. Presidential election popular vote totals (2000 - 2020)</h4>
             <div class = "chartbox">
                 <div id="maine_chart" style="width: 900px; height: 500px"></div>
             </div>
