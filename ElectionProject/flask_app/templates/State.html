@@ -466,14 +466,35 @@
           pointSize: 5
         };
 
-        var chart = new google.visualization.LineChart(document.getElementById('kansas_chart'));
+        var chart = new google.visualization.LineChart(document.getElementById('kentucky_chart'));
 
         chart.draw(data, options);
       }
 
 
+    google.charts.setOnLoadCallback(drawLouisianaChart);
+      function drawLouisianaChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Year', 'Republican vote', 'Democrat vote'],
+          ['2000 Bush(R) Gore(D)',  927871,                792344],
+          ['2004 Bush(R) Kerry(D)',  1102169,                820299],
+          ['2008 McCain(R) Obama(D)',  1148275,               782989],
+          ['2012 Romney(R) Obama(D)',  1152262,               809141],
+          ['2016 Trump(R) Clinton(D)',  1178638,               780154],
+          ['2020 Trump(R) Biden(D)',  1255776,               856034]
+        ]);
 
+        var options = {
+          width: 800,
+          colors:['red','blue'],
+          legend: { position: 'bottom' },
+          pointSize: 5
+        };
 
+        var chart = new google.visualization.LineChart(document.getElementById('louisiana_chart'));
+
+        chart.draw(data, options);
+      }
 
 
     google.charts.setOnLoadCallback(drawMaineChart);
@@ -499,6 +520,37 @@
 
         chart.draw(data, options);
       }
+
+
+    google.charts.setOnLoadCallback(drawMarylandChart);
+      function drawMarylandChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Year', 'Republican vote', 'Democrat vote'],
+          ['2000 Bush(R) Gore(D)',  813797,                1145782],
+          ['2004 Bush(R) Kerry(D)',  1024703,               1334493],
+          ['2008 McCain(R) Obama(D)',  959862,               1629467],
+          ['2012 Romney(R) Obama(D)',  971869,               1677844],
+          ['2016 Trump(R) Clinton(D)',  943169,               1677928],
+          ['2020 Trump(R) Biden(D)',  976414,               1985023]
+        ]);
+
+        var options = {
+          width: 800,
+          colors:['red','blue'],
+          legend: { position: 'bottom' },
+          pointSize: 5
+        };
+
+        var chart = new google.visualization.LineChart(document.getElementById('maryland_chart'));
+
+        chart.draw(data, options);
+      }
+
+
+
+
+
+
     </script>
 
 </head>
@@ -617,6 +669,10 @@
             </div>
         {% elif state.id == 19 %}
             <img src = "/static/Louisiana.jpg" alt = "Louisiana">
+            <h4 class = "subheader">Louisiana U.S. Presidential election popular vote totals (2000 - 2020)</h4>
+            <div class = "chartbox">
+                <div id="louisiana_chart" style="width: 900px; height: 500px"></div>
+            </div>
         {% elif state.id == 20 %}
             <img src = "/static/Maine.jpg" alt = "Maine">
             <h4 class = "subheader">Maine U.S. Presidential election popular vote totals (2000 - 2020)</h4>
@@ -625,6 +681,10 @@
             </div>
         {% elif state.id == 21 %}
             <img src = "/static/Maryland.jpg" alt = "Maryland">
+            <h4 class = "subheader">Maryland U.S. Presidential election popular vote totals (2000 - 2020)</h4>
+            <div class = "chartbox">
+                <div id="maryland_chart" style="width: 900px; height: 500px"></div>
+            </div>
         {% elif state.id == 22 %}
             <img src = "/static/Massachusetts.jpg" alt = "Massachusetts">
         {% elif state.id == 23 %}
