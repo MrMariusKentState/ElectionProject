@@ -6,10 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ url_for('static', filename='State.css') }}">
+    <script src="{{url_for('static', filename='State.js')}}"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <title>{{state.state}}</title>
 
-    <script src="{{url_for('static', filename='State.js')}}"></script>
+    
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
 
@@ -549,6 +550,31 @@
 
 
 
+    google.charts.setOnLoadCallback(drawMassachusettsChart);
+      function drawMassachusettsChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Year', 'Republican vote', 'Democrat vote'],
+          ['2000 Bush(R) Gore(D)',  878502,                1616487],
+          ['2004 Bush(R) Kerry(D)',  1071109,               1803800],
+          ['2008 McCain(R) Obama(D)',  1108854,               1904097],
+          ['2012 Romney(R) Obama(D)',  1188314,               1921290],
+          ['2016 Trump(R) Clinton(D)',  1090893,               1995196],
+          ['2020 Trump(R) Biden(D)',  1167202,               2382202]
+        ]);
+
+        var options = {
+          width: 800,
+          colors:['red','blue'],
+          legend: { position: 'bottom' },
+          pointSize: 5
+        };
+
+        var chart = new google.visualization.LineChart(document.getElementById('mass_chart'));
+
+        chart.draw(data, options);
+      }
+
+
 
 
     </script>
@@ -687,6 +713,10 @@
             </div>
         {% elif state.id == 22 %}
             <img src = "/static/Massachusetts.jpg" alt = "Massachusetts">
+            <h4 class = "subheader">Maryland U.S. Presidential election popular vote totals (2000 - 2020)</h4>
+            <div class = "chartbox">
+                <div id="mass_chart" style="width: 900px; height: 500px"></div>
+            </div>
         {% elif state.id == 23 %}
             <img src = "/static/Michigan.jpg" alt = "Michigan">
         {% elif state.id == 24 %}
