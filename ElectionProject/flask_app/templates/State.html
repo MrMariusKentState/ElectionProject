@@ -625,7 +625,29 @@
       }
 
 
+    google.charts.setOnLoadCallback(drawMissChart);
+      function drawMissChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Year', 'Republican vote', 'Democrat vote'],
+          ['2000 Bush(R) Gore(D)',  572844,                404614],
+          ['2004 Bush(R) Kerry(D)',  684981,               458094],
+          ['2008 McCain(R) Obama(D)',  724597,               554662],
+          ['2012 Romney(R) Obama(D)',  710746,               562949],
+          ['2016 Trump(R) Clinton(D)',  700714,               485131],
+          ['2020 Trump(R) Biden(D)',  756789,               539508]
+        ]);
 
+        var options = {
+          width: 800,
+          colors:['red','blue'],
+          legend: { position: 'bottom' },
+          pointSize: 5
+        };
+
+        var chart = new google.visualization.LineChart(document.getElementById('miss_chart'));
+
+        chart.draw(data, options);
+      }
 
 
 
@@ -784,6 +806,10 @@
             </div>
         {% elif state.id == 25 %}
             <img src = "/static/Mississippi.jpg" alt = "Mississippi">
+            <h4 class = "subheader">Mississippi U.S. Presidential election popular vote totals (2000 - 2020)</h4>
+            <div class = "chartbox">
+                <div id="miss_chart" style="width: 900px; height: 500px"></div>
+            </div>
         {% elif state.id == 26 %}
             <img src = "/static/Missouri.jpg" alt = "Missouri">
         {% elif state.id == 27 %}
