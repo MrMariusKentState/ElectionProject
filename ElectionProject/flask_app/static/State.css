@@ -55,15 +55,33 @@ th, td {
 }
 
 
-.subheader {
-    text-align: center;
-    margin-top: 40px;
-}
-
 .chartbox {
     width: 900px;
     margin-left: 100px;
+    /* position: relative; */
 }
+
+
+.subheader {
+    text-align: center;
+    margin-top: 40px;
+    /* position: absolute;
+    top: 60px */
+    /* left: absolute;
+    right: absolute; */
+    
+
+  
+}
+
+.subheader2 {
+    text-align: center;
+    margin-top: 40px;
+    
+
+  
+}
+
 
 #maine_chart {
     display: inline-block;
