@@ -700,6 +700,29 @@
       }
 
 
+    google.charts.setOnLoadCallback(drawNebraskaChart);
+      function drawNebraskaChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Year', 'Republican vote', 'Democrat vote'],
+          ['2000 Bush(R) Gore(D)',  433862,                231780],
+          ['2004 Bush(R) Kerry(D)',  512814,               254328],
+          ['2008 McCain(R) Obama(D)',  452979,               333319],
+          ['2012 Romney(R) Obama(D)',  475064,               302081],
+          ['2016 Trump(R) Clinton(D)',  495961,               284494],
+          ['2020 Trump(R) Biden(D)',  556846,               374583]
+        ]);
+
+        var options = {
+          width: 800,
+          colors:['red','blue'],
+          legend: { position: 'bottom' },
+          pointSize: 5
+        };
+
+        var chart = new google.visualization.LineChart(document.getElementById('nebraska_chart'));
+
+        chart.draw(data, options);
+      }
 
 
 
@@ -876,6 +899,10 @@
             </div>
         {% elif state.id == 28 %}
             <img src = "/static/Nebraska.jpg" alt = "Nebraska">
+            <h4 class = "subheader">Nebraska U.S. Presidential election popular vote totals (2000 - 2020)</h4>
+            <div class = "chartbox">
+                <div id="nebraska_chart" style="width: 900px; height: 500px"></div>
+            </div>
         {% elif state.id == 29 %}
             <img src = "/static/Nevada.jpg" alt = "Nevada">
         {% elif state.id == 30 %}
