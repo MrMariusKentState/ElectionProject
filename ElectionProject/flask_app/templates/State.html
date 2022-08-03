@@ -725,6 +725,56 @@
       }
 
 
+    google.charts.setOnLoadCallback(drawNHChart);
+      function drawNHChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Year', 'Republican vote', 'Democrat vote'],
+          ['2000 Bush(R) Gore(D)',  273559,                266348],
+          ['2004 Bush(R) Kerry(D)',  331237,               340511],
+          ['2008 McCain(R) Obama(D)',  316534,               384826],
+          ['2012 Romney(R) Obama(D)',  329918,               369561],
+          ['2016 Trump(R) Clinton(D)',  345790,               348526],
+          ['2020 Trump(R) Biden(D)',  365654,               424921]
+        ]);
+
+        var options = {
+          width: 800,
+          colors:['red','blue'],
+          legend: { position: 'bottom' },
+          pointSize: 5
+        };
+
+        var chart = new google.visualization.LineChart(document.getElementById('NH_chart'));
+
+        chart.draw(data, options);
+      }
+
+
+    google.charts.setOnLoadCallback(drawNJChart);
+      function drawNJChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Year', 'Republican vote', 'Democrat vote'],
+          ['2000 Bush(R) Gore(D)',  1284173,                1788850],
+          ['2004 Bush(R) Kerry(D)',  1670003,               1911430],
+          ['2008 McCain(R) Obama(D)',  1613207,               2215422],
+          ['2012 Romney(R) Obama(D)',  1477568,               2125101],
+          ['2016 Trump(R) Clinton(D)',  1601933,               2148278],
+          ['2020 Trump(R) Biden(D)',  1883274,               2608335]
+        ]);
+
+        var options = {
+          width: 800,
+          colors:['red','blue'],
+          legend: { position: 'bottom' },
+          pointSize: 5
+        };
+
+        var chart = new google.visualization.LineChart(document.getElementById('NJ_chart'));
+
+        chart.draw(data, options);
+      }
+
+
 
 
     </script>
@@ -907,20 +957,30 @@
             <div class = "chartbox">
                 <div id="nebraska_chart" style="width: 900px; height: 500px"></div>
             </div>
+
+
         {% elif state.id == 29 %}
             <img src = "/static/Nevada.jpg" alt = "Nevada">
             <div class = "chartbox2"></div>
               <div id="nebraska_chart" style="width: 900px; height: 500px"></div>    
-              
-              <h4 class = "test">
-                  <div style = "color: black; margin-top: 50px; margin-left: 50px; text-align: center;">Nevada U.S. Presidential election popular vote results (2000 - 2020)</div>
-              </h4>
-                
+                <h4 class = "test">
+                    <div style = "color: black; margin-top: 50px; margin-left: 50px; text-align: center;">Nevada U.S. Presidential election popular vote results (2000 - 2020)</div>
+                </h4>
             </div>
+
+
         {% elif state.id == 30 %}
             <img src = "/static/new_hampshire.jpg" alt = "New_hampshire">
+            <h4 class = "subheader">New Hampshire U.S. Presidential election popular vote totals (2000 - 2020)</h4>
+            <div class = "chartbox">
+                <div id="NH_chart" style="width: 900px; height: 500px"></div>
+            </div>
         {% elif state.id == 31 %}
             <img src = "/static/new_jersey.jpg" alt = "New_jersey">
+            <h4 class = "subheader">New Jersey U.S. Presidential election popular vote totals (2000 - 2020)</h4>
+            <div class = "chartbox">
+                <div id="NJ_chart" style="width: 900px; height: 500px"></div>
+            </div>
         {% elif state.id == 32 %}
             <img src = "/static/New_Mexico.jpg" alt = "New_mexico">
         {% elif state.id == 33 %}
