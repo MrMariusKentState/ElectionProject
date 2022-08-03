@@ -61,15 +61,24 @@ th, td {
     /* position: relative; */
 }
 
+.chartbox2 {
+    width: 900px;
+    margin-left: 100px;
+    position: relative;
+}
+
+.test {
+    width: 1000px;
+    height: 200px;
+    position: absolute;
+    top: 500px;
+    left: 500px;
+}
+
 
 .subheader {
     text-align: center;
-    margin-top: 40px;
-    /* position: absolute;
-    top: 60px */
-    /* left: absolute;
-    right: absolute; */
-    
+    margin-top: 40px;    
 
   
 }
