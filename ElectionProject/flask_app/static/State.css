@@ -61,19 +61,6 @@ th, td {
     /* position: relative; */
 }
 
-.chartbox2 {
-    width: 900px;
-    margin-left: 100px;
-    position: relative;
-}
-
-.test {
-    width: 1000px;
-    height: 200px;
-    position: absolute;
-    top: 500px;
-    left: 500px;
-}
 
 
 .subheader {
@@ -95,4 +82,21 @@ th, td {
 #maine_chart {
     display: inline-block;
     margin: 0 auto;
+}
+
+
+/* the below is a test to overlay header over Nevada chart (test location) */
+
+.chartbox2 {
+    width: 900px;
+    margin-left: 100px;
+    /* position: relative; */
+}
+
+.test {
+    width: 1000px;
+    height: 200px;
+    position: absolute;
+    top: 540px;
+    left: 200px;
 }
