@@ -828,6 +828,30 @@
       }
 
 
+    google.charts.setOnLoadCallback(drawNCChart);
+      function drawNCChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Year', 'Republican vote', 'Democrat vote'],
+          ['2000 Bush(R) Gore(D)',  1631163,                1257692],
+          ['2004 Bush(R) Kerry(D)',  1961166,               1525849],
+          ['2008 McCain(R) Obama(D)',  2128474,             2142651],
+          ['2012 Romney(R) Obama(D)',  2270395,               2178391],
+          ['2016 Trump(R) Clinton(D)',  2362631,               2189316],
+          ['2020 Trump(R) Biden(D)',  2758775,               2684292]
+        ]);
+
+        var options = {
+          width: 800,
+          colors:['red','blue'],
+          legend: { position: 'bottom' },
+          pointSize: 5
+        };
+
+        var chart = new google.visualization.LineChart(document.getElementById('NC_chart'));
+
+        chart.draw(data, options);
+      }
+
 
 
 
@@ -1050,6 +1074,11 @@
             </div>
         {% elif state.id == 34 %}
             <img src = "/static/north_carolina.jpg" alt = "North_carolina">
+            <h4 class = "subheader">North Carolina U.S. Presidential election popular vote totals (2000 - 2020)</h4>
+            <div class = "chartbox">
+                <div id="NC_chart" style="width: 900px; height: 500px"></div>
+            </div>
+
         {% elif state.id == 35 %}
             <img src = "/static/North_Dakota.jpg" alt = "North_dakota">
         {% elif state.id == 36 %}
