@@ -853,6 +853,33 @@
       }
 
 
+    google.charts.setOnLoadCallback(drawNDChart);
+      function drawNDChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Year', 'Republican vote', 'Democrat vote'],
+          ['2000 Bush(R) Gore(D)',  174852,                95284],
+          ['2004 Bush(R) Kerry(D)',  196651,               111052],
+          ['2008 McCain(R) Obama(D)',  168601,             141278],
+          ['2012 Romney(R) Obama(D)',  188163,               124827],
+          ['2016 Trump(R) Clinton(D)',  216794,               93758],
+          ['2020 Trump(R) Biden(D)',  235595,               114902]
+        ]);
+
+        var options = {
+          width: 800,
+          colors:['red','blue'],
+          legend: { position: 'bottom' },
+          pointSize: 5
+        };
+
+        var chart = new google.visualization.LineChart(document.getElementById('ND_chart'));
+
+        chart.draw(data, options);
+      }
+
+
+
+
 
 
 
@@ -1078,9 +1105,12 @@
             <div class = "chartbox">
                 <div id="NC_chart" style="width: 900px; height: 500px"></div>
             </div>
-
         {% elif state.id == 35 %}
             <img src = "/static/North_Dakota.jpg" alt = "North_dakota">
+            <h4 class = "subheader">North Dakota U.S. Presidential election popular vote totals (2000 - 2020)</h4>
+            <div class = "chartbox">
+                <div id="ND_chart" style="width: 900px; height: 500px"></div>
+            </div>
         {% elif state.id == 36 %}
             <img src = "/static/Ohio.jpg" alt = "Ohio">
         {% elif state.id == 37 %}
