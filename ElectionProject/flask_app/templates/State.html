@@ -878,6 +878,29 @@
       }
 
 
+    google.charts.setOnLoadCallback(drawOhioChart);
+      function drawOhioChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Year', 'Republican vote', 'Democrat vote'],
+          ['2000 Bush(R) Gore(D)',  2351209,                2186190],
+          ['2004 Bush(R) Kerry(D)',  2859768,               2741167],
+          ['2008 McCain(R) Obama(D)',  2677820,             2940044],
+          ['2012 Romney(R) Obama(D)',  2661433,               2827710],
+          ['2016 Trump(R) Clinton(D)',  2841006,               2394169],
+          ['2020 Trump(R) Biden(D)',  3154834,               2679165]
+        ]);
+
+        var options = {
+          width: 800,
+          colors:['red','blue'],
+          legend: { position: 'bottom' },
+          pointSize: 5
+        };
+
+        var chart = new google.visualization.LineChart(document.getElementById('Ohio_chart'));
+
+        chart.draw(data, options);
+      }
 
 
 
@@ -1113,6 +1136,10 @@
             </div>
         {% elif state.id == 36 %}
             <img src = "/static/Ohio.jpg" alt = "Ohio">
+            <h4 class = "subheader">Ohio U.S. Presidential election popular vote totals (2000 - 2020)</h4>
+            <div class = "chartbox">
+                <div id="Ohio_chart" style="width: 900px; height: 500px"></div>
+            </div>
         {% elif state.id == 37 %}
             <img src = "/static/Oklahoma.jpg" alt = "Oklahoma">
         {% elif state.id == 38 %}
