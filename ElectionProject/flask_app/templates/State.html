@@ -903,7 +903,55 @@
       }
 
 
+    google.charts.setOnLoadCallback(drawOKChart);
+      function drawOKChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Year', 'Republican vote', 'Democrat vote'],
+          ['2000 Bush(R) Gore(D)',  744337,                474276],
+          ['2004 Bush(R) Kerry(D)',  959792,               503966],
+          ['2008 McCain(R) Obama(D)',  960165,             502496],
+          ['2012 Romney(R) Obama(D)',  891325,               443547],
+          ['2016 Trump(R) Clinton(D)',  949136,               420375],
+          ['2020 Trump(R) Biden(D)',  1020280,               503890]
+        ]);
 
+        var options = {
+          width: 800,
+          colors:['red','blue'],
+          legend: { position: 'bottom' },
+          pointSize: 5
+        };
+
+        var chart = new google.visualization.LineChart(document.getElementById('OK_chart'));
+
+        chart.draw(data, options);
+      }
+
+
+
+    google.charts.setOnLoadCallback(drawOregonChart);
+      function drawOregonChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Year', 'Republican vote', 'Democrat vote'],
+          ['2000 Bush(R) Gore(D)',  713577,                720342],
+          ['2004 Bush(R) Kerry(D)',  866831,               943163],
+          ['2008 McCain(R) Obama(D)',  738475,             1037291],
+          ['2012 Romney(R) Obama(D)',  754175,               970488],
+          ['2016 Trump(R) Clinton(D)',  782403,               1002106],
+          ['2020 Trump(R) Biden(D)',  958448,               1340383]
+        ]);
+
+        var options = {
+          width: 800,
+          colors:['red','blue'],
+          legend: { position: 'bottom' },
+          pointSize: 5
+        };
+
+        var chart = new google.visualization.LineChart(document.getElementById('Oregon_chart'));
+
+        chart.draw(data, options);
+      }
 
 
     </script>
@@ -1142,8 +1190,16 @@
             </div>
         {% elif state.id == 37 %}
             <img src = "/static/Oklahoma.jpg" alt = "Oklahoma">
+            <h4 class = "subheader">Oklahoma U.S. Presidential election popular vote totals (2000 - 2020)</h4>
+            <div class = "chartbox">
+                <div id="OK_chart" style="width: 900px; height: 500px"></div>
+            </div>
         {% elif state.id == 38 %}
             <img src = "/static/Oregon.jpg" alt = "Oregon">
+            <h4 class = "subheader">Oregon U.S. Presidential election popular vote totals (2000 - 2020)</h4>
+            <div class = "chartbox">
+                <div id="Oregon_chart" style="width: 900px; height: 500px"></div>
+            </div>
         {% elif state.id == 39 %}
             <img src = "/static/Pennsylvania.jpg" alt = "Pennsylvania">
         {% elif state.id == 40 %}
