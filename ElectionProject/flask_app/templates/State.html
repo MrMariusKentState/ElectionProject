@@ -981,6 +981,31 @@
 
 
 
+    google.charts.setOnLoadCallback(drawRIChart);
+      function drawRIChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Year', 'Republican vote', 'Democrat vote'],
+          ['2000 Bush(R) Gore(D)',  130555,                249508],
+          ['2004 Bush(R) Kerry(D)',  169046,               259765],
+          ['2008 McCain(R) Obama(D)',  165391,             296571],
+          ['2012 Romney(R) Obama(D)',  157204,               279677],
+          ['2016 Trump(R) Clinton(D)',  180543,               252525],
+          ['2020 Trump(R) Biden(D)',  199922,               307486]
+        ]);
+
+        var options = {
+          width: 800,
+          colors:['red','blue'],
+          legend: { position: 'bottom' },
+          pointSize: 5
+        };
+
+        var chart = new google.visualization.LineChart(document.getElementById('RI_chart'));
+
+        chart.draw(data, options);
+      }
+
+
 
 
     </script>
@@ -1237,6 +1262,10 @@
             </div>
         {% elif state.id == 40 %}
             <img src = "/static/rhode_island.jpg" alt = "rhode_island">
+            <h4 class = "subheader">Rhode Island U.S. Presidential election popular vote totals (2000 - 2020)</h4>
+            <div class = "chartbox">
+                <div id="RI_chart" style="width: 900px; height: 500px"></div>
+            </div>
         {% elif state.id == 41 %}
             <img src = "/static/south_carolina.jpg" alt = "south_carolina">
         {% elif state.id == 42 %}
