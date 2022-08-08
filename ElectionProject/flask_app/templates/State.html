@@ -954,6 +954,35 @@
       }
 
 
+
+    google.charts.setOnLoadCallback(drawPAChart);
+      function drawPAChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Year', 'Republican vote', 'Democrat vote'],
+          ['2000 Bush(R) Gore(D)',  2281127,                2485967],
+          ['2004 Bush(R) Kerry(D)',  2793847,               2938095],
+          ['2008 McCain(R) Obama(D)',  2655885,             3276363],
+          ['2012 Romney(R) Obama(D)',  2680434,               2990274],
+          ['2016 Trump(R) Clinton(D)',  2970733,               2926441],
+          ['2020 Trump(R) Biden(D)',  3377674,               3458229]
+        ]);
+
+        var options = {
+          width: 800,
+          colors:['red','blue'],
+          legend: { position: 'bottom' },
+          pointSize: 5
+        };
+
+        var chart = new google.visualization.LineChart(document.getElementById('PA_chart'));
+
+        chart.draw(data, options);
+      }
+
+
+
+
+
     </script>
 
 </head>
@@ -1202,6 +1231,10 @@
             </div>
         {% elif state.id == 39 %}
             <img src = "/static/Pennsylvania.jpg" alt = "Pennsylvania">
+            <h4 class = "subheader">Pennsylvania U.S. Presidential election popular vote totals (2000 - 2020)</h4>
+            <div class = "chartbox">
+                <div id="PA_chart" style="width: 900px; height: 500px"></div>
+            </div>
         {% elif state.id == 40 %}
             <img src = "/static/rhode_island.jpg" alt = "rhode_island">
         {% elif state.id == 41 %}
