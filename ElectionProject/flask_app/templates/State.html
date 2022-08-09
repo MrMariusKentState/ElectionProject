@@ -1005,6 +1005,32 @@
         chart.draw(data, options);
       }
 
+    google.charts.setOnLoadCallback(drawSCChart);
+      function drawSCChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Year', 'Republican vote', 'Democrat vote'],
+          ['2000 Bush(R) Gore(D)',  785937,                565561],
+          ['2004 Bush(R) Kerry(D)',  937974,               661699],
+          ['2008 McCain(R) Obama(D)',  1034896,             862449],
+          ['2012 Romney(R) Obama(D)',  1071645,               865941],
+          ['2016 Trump(R) Clinton(D)',  1155389,               855373],
+          ['2020 Trump(R) Biden(D)',  1385103,               1091541]
+        ]);
+
+        var options = {
+          width: 800,
+          colors:['red','blue'],
+          legend: { position: 'bottom' },
+          pointSize: 5
+        };
+
+        var chart = new google.visualization.LineChart(document.getElementById('SC_chart'));
+
+        chart.draw(data, options);
+      }
+
+
+
 
 
 
@@ -1268,6 +1294,10 @@
             </div>
         {% elif state.id == 41 %}
             <img src = "/static/south_carolina.jpg" alt = "south_carolina">
+            <h4 class = "subheader">South Carolina U.S. Presidential election popular vote totals (2000 - 2020)</h4>
+            <div class = "chartbox">
+                <div id="SC_chart" style="width: 900px; height: 500px"></div>
+            </div>
         {% elif state.id == 42 %}
             <img src = "/static/south_dakota.jpg" alt = "south_dakota">
         {% elif state.id == 43 %}
