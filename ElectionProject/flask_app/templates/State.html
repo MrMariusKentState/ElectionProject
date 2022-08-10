@@ -1080,6 +1080,30 @@
       }
 
 
+    google.charts.setOnLoadCallback(drawTexasChart);
+      function drawTexasChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Year', 'Republican vote', 'Democrat vote'],
+          ['2000 Bush(R) Gore(D)',  3799639,                2433746],
+          ['2004 Bush(R) Kerry(D)',  4526917,               2832704],
+          ['2008 McCain(R) Obama(D)',  4479328,             3528633],
+          ['2012 Romney(R) Obama(D)',  4569843,               3308124],
+          ['2016 Trump(R) Clinton(D)',  4685047,               3877868],
+          ['2020 Trump(R) Biden(D)',  5890347,               5259126]
+        ]);
+
+        var options = {
+          width: 800,
+          colors:['red','blue'],
+          legend: { position: 'bottom' },
+          pointSize: 5
+        };
+
+        var chart = new google.visualization.LineChart(document.getElementById('Texas_chart'));
+
+        chart.draw(data, options);
+      }
+
 
 
 
@@ -1363,6 +1387,10 @@
             </div>
         {% elif state.id == 44 %}
             <img src = "/static/Texas.jpg" alt = "Texas">
+            <h4 class = "subheader">Texas U.S. Presidential election popular vote totals (2000 - 2020)</h4>
+            <div class = "chartbox">
+                <div id="Texas_chart" style="width: 900px; height: 500px"></div>
+            </div>
         {% elif state.id == 45 %}
             <img src = "/static/Utah.jpg" alt = "Utah">
         {% elif state.id == 46 %}
