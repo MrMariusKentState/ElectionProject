@@ -1109,16 +1109,16 @@
       function drawUtahChart() {
         var data = google.visualization.arrayToDataTable([
           ['Year', 'Republican vote', 'Democrat vote', '3rd party vote'],
-          ['2000 Bush(R) Gore(D) Nader(G)',  515096,   203053,    35850],
-          ['2004 Bush(R) Kerry(D) Nader(G)',  663742,  241199,    11305],
-          ['2008 McCain(R) Obama(D) Baldwin(CP)',  596030,   327670,   12012],
-          ['2012 Romney(R) Obama(D)  Johnson(LI)',  740600,   251813,   12572],
-          ['2016 Trump(R) Clinton(D) McMullin(I)',  515231,   310676,   243690],
-          ['2020 Trump(R) Biden(D)  Jorgensen(LI)',  865140,   560282,   38447]
+          ['2000   Bush(R) Gore(D) Nader(G)',  515096,   203053,    35850],
+          ['2004   Bush(R) Kerry(D) Nader(G)',  663742,  241199,    11305],
+          ['2008   McCain(R) Obama(D) Baldwin(CP)',  596030,   327670,   12012],
+          ['2012   Romney(R) Obama(D)  Johnson(LI)',  740600,   251813,   12572],
+          ['2016   Trump(R) Clinton(D) McMullin(I)',  515231,   310676,   243690],
+          ['2020   Trump(R) Biden(D)  Jorgensen(LI)',  865140,   560282,   38447]
         ]);
 
         var options = {
-          width: 800,
+          width: 1000,
           colors:['red','blue', 'green'],
           legend: { position: 'bottom' },
           pointSize: 5
