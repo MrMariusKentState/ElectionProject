@@ -1131,6 +1131,35 @@
 
 
 
+    google.charts.setOnLoadCallback(drawVermontChart);
+      function drawVermontChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Year', 'Republican vote', 'Democrat vote'],
+          ['2000 Bush(R) Gore(D)',  119775,                149022],
+          ['2004 Bush(R) Kerry(D)',  121180,               184067],
+          ['2008 McCain(R) Obama(D)',  98974,             219262],
+          ['2012 Romney(R) Obama(D)',  92698,               199239],
+          ['2016 Trump(R) Clinton(D)',  95369,               178573],
+          ['2020 Trump(R) Biden(D)',  112704,               242820]
+        ]);
+
+        var options = {
+          width: 800,
+          colors:['red','blue'],
+          legend: { position: 'bottom' },
+          pointSize: 5
+        };
+
+        var chart = new google.visualization.LineChart(document.getElementById('Vermont_chart'));
+
+        chart.draw(data, options);
+      }
+
+
+
+
+
+
 
     </script>
 
@@ -1422,6 +1451,10 @@
             </div>
         {% elif state.id == 46 %}
             <img src = "/static/Vermont.jpg" alt = "Vermont">
+            <h4 class = "subheader">Vermont U.S. Presidential election popular vote totals (2000 - 2020)</h4>
+            <div class = "chartbox">
+                <div id="Vermont_chart" style="width: 900px; height: 500px"></div>
+            </div>
         {% elif state.id == 47 %}
             <img src = "/static/Virginia.jpg" alt = "Virginia">
         {% elif state.id == 48 %}
