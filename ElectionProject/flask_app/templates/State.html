@@ -1181,6 +1181,29 @@
       }
 
 
+    google.charts.setOnLoadCallback(drawWAChart);
+      function drawWAChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Year', 'Republican vote', 'Democrat vote'],
+          ['2000 Bush(R) Gore(D)',  1108864,                1247652],
+          ['2004 Bush(R) Kerry(D)',  1304894,               1510201],
+          ['2008 McCain(R) Obama(D)',  1229216,             1750848],
+          ['2012 Romney(R) Obama(D)',  1290670,               1755396],
+          ['2016 Trump(R) Clinton(D)',  1221747,               1742718],
+          ['2020 Trump(R) Biden(D)',  1584651,               2369612]
+        ]);
+
+        var options = {
+          width: 800,
+          colors:['red','blue'],
+          legend: { position: 'bottom' },
+          pointSize: 5
+        };
+
+        var chart = new google.visualization.LineChart(document.getElementById('WA_chart'));
+
+        chart.draw(data, options);
+      }
 
 
 
@@ -1486,6 +1509,10 @@
             </div>
         {% elif state.id == 48 %}
             <img src = "/static/Washington.jpg" alt = "Washington">
+            <h4 class = "subheader">Washington U.S. Presidential election popular vote totals (2000 - 2020)</h4>
+            <div class = "chartbox">
+                <div id="WA_chart" style="width: 900px; height: 500px"></div>
+            </div>
         {% elif state.id == 49 %}
             <img src = "/static/west_virginia.jpg" alt = "west_virginia">
         {% elif state.id == 50 %}
