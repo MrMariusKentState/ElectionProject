@@ -1256,6 +1256,30 @@
       }
 
 
+    google.charts.setOnLoadCallback(drawWYChart);
+      function drawWYChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Year', 'Republican vote', 'Democrat vote'],
+          ['2000 Bush(R) Gore(D)',  147947,                60481],
+          ['2004 Bush(R) Kerry(D)',  167629,               70776],
+          ['2008 McCain(R) Obama(D)',  164958,             82868],
+          ['2012 Romney(R) Obama(D)',  170962,               69286],
+          ['2016 Trump(R) Clinton(D)',  174419,               55973],
+          ['2020 Trump(R) Biden(D)',  193559,               73491]
+        ]);
+
+        var options = {
+          width: 800,
+          colors:['red','blue'],
+          legend: { position: 'bottom' },
+          pointSize: 5
+        };
+
+        var chart = new google.visualization.LineChart(document.getElementById('WY_chart'));
+
+        chart.draw(data, options);
+      }
+
 
 
 
@@ -1580,6 +1604,10 @@
             </div>
         {% elif state.id == 51 %}
             <img src = "/static/Wyoming.jpg" alt = "Wyoming">
+            <h4 class = "subheader">Wyoming U.S. Presidential election popular vote totals (2000 - 2020)</h4>
+            <div class = "chartbox">
+                <div id="WY_chart" style="width: 900px; height: 500px"></div>
+            </div>
         {% endif %}
         <h4 class = "subheader2">The 2020 U.S. Presidential Election</h4>
         <table>
